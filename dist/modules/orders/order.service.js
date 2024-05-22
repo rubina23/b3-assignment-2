@@ -23,8 +23,13 @@ const getOrderById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield order_model_1.Order.findById(id);
     return result;
 });
+const orderSearchByEmail = (orderSearchByEmail) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield order_model_1.Order.findById(orderSearchByEmail);
+    return result;
+});
 exports.OrderServices = {
     createOrder,
     getAllOrders,
     getOrderById,
+    orderSearchByEmail,
 };

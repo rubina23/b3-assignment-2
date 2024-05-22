@@ -12,8 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderControllers = void 0;
 const order_service_1 = require("./order.service");
 const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    //   res.send("hiiiii");
-    //   console.log(req.body);
     const orderData = req.body;
     const result = yield order_service_1.OrderServices.createOrder(orderData);
     res.json({
@@ -27,7 +25,7 @@ const getAllOrders = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const result = yield order_service_1.OrderServices.getAllOrders();
         res.status(200).json({
             success: true,
-            message: "All Products are fetched Successfully!",
+            message: "Orders fetched successfully!",
             data: result,
         });
     }
@@ -45,7 +43,25 @@ const getOrderById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const result = yield order_service_1.OrderServices.getOrderById(orderId);
         res.status(200).json({
             success: true,
-            message: "Product fetched successfully!",
+            message: "Order fetched successfully!",
+            data: result,
+        });
+    }
+    catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Order not found",
+            // error: err,
+        });
+    }
+});
+const orderSearchByEmail = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { orderSearchByEmail } = req.params;
+        const result = yield order_service_1.OrderServices.getOrderById(orderSearchByEmail);
+        res.status(200).json({
+            success: true,
+            message: "Order fetched successfully!",
             data: result,
         });
     }
@@ -61,4 +77,5 @@ exports.OrderControllers = {
     createOrder,
     getAllOrders,
     getOrderById,
+    orderSearchByEmail,
 };

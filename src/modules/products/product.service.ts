@@ -1,4 +1,3 @@
-// import { request } from "express";
 import { TProduct } from "./product.interface";
 import { Product } from "./product.model";
 
@@ -9,10 +8,6 @@ const createProduct = async (payLoad: TProduct) => {
 
 const getAllProducts = async () => {
   const result = await Product.find();
-  // const searchTerm = request.query.searchTerm;
-  // const result = await Product.find({
-  //   name: { $regex: searchTerm },
-  // });
   return result;
 };
 
@@ -22,8 +17,8 @@ const getProductById = async (id: string) => {
 };
 
 const updateProduct = async () => {
-  const result = await Product.findByIdAndUpdate({
-    name: "Accer 2024",
+  const result = await Product.findOneAndUpdate({
+    name: "Iphone 13 pro",
     description: "test9 2024",
     // inventory: { quantity: 19 },
   });

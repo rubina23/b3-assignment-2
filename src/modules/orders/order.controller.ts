@@ -16,7 +16,7 @@ const getAllOrders = async (req: Request, res: Response) => {
     const result = await OrderServices.getAllOrders();
     res.status(200).json({
       success: true,
-      message: "All Products are fetched Successfully!",
+      message: "Orders fetched successfully!",
       data: result,
     });
   } catch (err) {
@@ -35,7 +35,7 @@ const getOrderById = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Product fetched successfully!",
+      message: "Order fetched successfully!",
       data: result,
     });
   } catch (err) {
@@ -52,7 +52,7 @@ const orderSearchByEmail = async (req: Request, res: Response) => {
     const result = await OrderServices.getOrderById(orderSearchByEmail);
     res.status(200).json({
       success: true,
-      message: "Product fetched successfully!",
+      message: "Order fetched successfully!",
       data: result,
     });
   } catch (err) {

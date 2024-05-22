@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { ProductServices } from "./product.service";
-// import { error } from "console";
 
 const createProduct = async (req: Request, res: Response) => {
   const productData = req.body;
@@ -47,8 +46,6 @@ const getProductById = async (req: Request, res: Response) => {
 };
 const updateProduct = async (req: Request, res: Response) => {
   try {
-    // const { productId } = req.params;
-    // const result = await ProductServices.updateProduct(productId);
     const result = await ProductServices.updateProduct();
     res.status(200).json({
       success: true,
@@ -70,7 +67,7 @@ const deleteProduct = async (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
       message: "Product deleted Successfully!",
-      data: result, //null
+      data: null,
     });
   } catch (err) {
     res.status(500).json({

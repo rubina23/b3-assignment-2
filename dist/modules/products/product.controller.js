@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductControllers = void 0;
 const product_service_1 = require("./product.service");
-// import { error } from "console";
 const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const productData = req.body;
     const result = yield product_service_1.ProductServices.createProduct(productData);
@@ -58,8 +57,6 @@ const getProductById = (req, res) => __awaiter(void 0, void 0, void 0, function*
 });
 const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // const { productId } = req.params;
-        // const result = await ProductServices.updateProduct(productId);
         const result = yield product_service_1.ProductServices.updateProduct();
         res.status(200).json({
             success: true,
@@ -82,7 +79,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(200).json({
             success: true,
             message: "Product deleted Successfully!",
-            data: result, //null
+            data: null,
         });
     }
     catch (err) {

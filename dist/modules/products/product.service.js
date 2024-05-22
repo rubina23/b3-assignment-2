@@ -17,10 +17,6 @@ const createProduct = (payLoad) => __awaiter(void 0, void 0, void 0, function* (
 });
 const getAllProducts = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.find();
-    // const searchTerm = request.query.searchTerm;
-    // const result = await Product.find({
-    //   name: { $regex: searchTerm },
-    // });
     return result;
 });
 const getProductById = (id) => __awaiter(void 0, void 0, void 0, function* () {
@@ -28,9 +24,9 @@ const getProductById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 const updateProduct = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield product_model_1.Product.findByIdAndUpdate({
-        name: "Accer",
-        description: "test9",
+    const result = yield product_model_1.Product.findOneAndUpdate({
+        name: "Iphone 13 pro",
+        description: "test9 2024",
         // inventory: { quantity: 19 },
     });
     return result;

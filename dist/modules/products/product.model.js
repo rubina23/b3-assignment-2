@@ -5,40 +5,50 @@ const mongoose_1 = require("mongoose");
 const variantSchema = new mongoose_1.Schema({
     type: {
         type: String,
+        required: true,
     },
     value: {
         type: String,
+        required: true,
     },
 });
 const inventorySchema = new mongoose_1.Schema({
     quantity: {
         type: Number,
+        required: true,
     },
     inStock: {
         type: Boolean,
+        required: true,
     },
 });
 const productSchema = new mongoose_1.Schema({
     name: {
         type: String,
+        required: true,
     },
     description: {
         type: String,
+        required: true,
     },
     price: {
         type: Number,
+        required: true,
     },
     category: {
         type: String,
+        required: true,
     },
     tags: {
         type: [String],
     },
     variants: {
         type: [variantSchema],
+        required: true,
     },
     inventory: {
         type: inventorySchema,
+        required: true,
     },
 });
 //Create Model
