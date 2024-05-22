@@ -1,15 +1,7 @@
 import express, { Request, Response } from "express";
 import { Order } from "./order.model";
+import { OrderControllers } from "./order.controller";
 const router = express.Router();
 
-router.post("/", async (req: Request, res: Response) => {
-  //   res.send("hiiiii");
-  //   console.log(req.body);
-  const result = await Order.create(req.body);
-  res.json({
-    success: true,
-    message: "Order created successfully!",
-    data: result,
-  });
-});
+router.post("/", OrderControllers.createOrder);
 export const OrderRoutes = router;
