@@ -49,7 +49,7 @@ const updateProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
     // const result = await ProductServices.updateProduct(productId);
-    const result = await ProductServices.updateProduct(productId);
+    const result = await ProductServices.updateProduct();
     res.status(200).json({
       success: true,
       message: "Product updated successfully!",

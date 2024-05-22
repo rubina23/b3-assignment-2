@@ -22,12 +22,8 @@ const getProductById = async (id: string) => {
 };
 
 const updateProduct = async () => {
-  // const result = await Product.updateOne();
-  // const result = await Product.updateOne({
-  // const result = await Product.findOneAndUpdate({
-  // const result = await Product.findByIdAndUpdate({
-  const result = await Product.updateOne({
-    name: "iphone99 update for testing",
+  const result = await Product.findByIdAndUpdate({
+    name: "Accer",
     description: "test9",
     // inventory: { quantity: 19 },
   });
