@@ -23,8 +23,8 @@ const getProductById = async (id: string) => {
 
 const updateProduct = async () => {
   const result = await Product.findByIdAndUpdate({
-    name: "Accer",
-    description: "test9",
+    name: "Accer 2024",
+    description: "test9 2024",
     // inventory: { quantity: 19 },
   });
   return result;

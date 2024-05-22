@@ -2,8 +2,6 @@ import { Request, Response } from "express";
 import { OrderServices } from "./order.service";
 
 const createOrder = async (req: Request, res: Response) => {
-  //   res.send("hiiiii");
-  //   console.log(req.body);
   const orderData = req.body;
   const result = await OrderServices.createOrder(orderData);
   res.json({
@@ -34,6 +32,7 @@ const getOrderById = async (req: Request, res: Response) => {
   try {
     const { orderId } = req.params;
     const result = await OrderServices.getOrderById(orderId);
+
     res.status(200).json({
       success: true,
       message: "Product fetched successfully!",
