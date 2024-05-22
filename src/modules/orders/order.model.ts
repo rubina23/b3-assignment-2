@@ -18,4 +18,3 @@ const orderSchema = new Schema<TOrder>({
 
 // Model
 export const Order = model<TOrder>("Order", orderSchema);
-// export const Product = model<TProduct>("Product", productSchema);
