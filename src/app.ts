@@ -11,7 +11,7 @@ app.use("/api/products", ProductRoutes);
 app.use("/api/orders", OrderRoutes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello Next Level Developer");
+  res.send("Hello .............Welcome..........");
 });
 
 export default app;
