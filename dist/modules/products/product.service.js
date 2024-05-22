@@ -17,18 +17,27 @@ const createProduct = (payLoad) => __awaiter(void 0, void 0, void 0, function* (
 });
 const getAllProducts = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.find();
+    // const searchTerm = request.query.searchTerm;
+    // const result = await Product.find({
+    //   name: { $regex: searchTerm },
+    // });
     return result;
 });
 const getProductById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.findById(id);
     return result;
 });
-const updateProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield product_model_1.Product.findById(id);
+const updateProduct = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findByIdAndUpdate({
+        name: "Accer",
+        description: "test9",
+        // inventory: { quantity: 19 },
+    });
     return result;
 });
 const deleteProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield product_model_1.Product.findById(id);
+    const result = yield product_model_1.Product.findByIdAndDelete(id);
+    // const result = await Product.findOneAndDelete();
     return result;
 });
 exports.ProductServices = {

@@ -26,7 +26,7 @@ const getAllProducts = (req, res) => __awaiter(void 0, void 0, void 0, function*
         const result = yield product_service_1.ProductServices.getAllProducts();
         res.status(200).json({
             success: true,
-            message: "All Products are fetched Successfully!",
+            message: "Products fetched successfully!",
             data: result,
         });
     }
@@ -44,25 +44,26 @@ const getProductById = (req, res) => __awaiter(void 0, void 0, void 0, function*
         const result = yield product_service_1.ProductServices.getProductById(productId);
         res.status(200).json({
             success: true,
-            message: "Products get by Id Successfully!",
+            message: "Product fetched successfully!",
             data: result,
         });
     }
     catch (err) {
         res.status(500).json({
             success: false,
-            message: "Couldn't fetch products!",
-            error: err,
+            message: "Product not found",
+            // error: err,
         });
     }
 });
 const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { productId } = req.params;
-        const result = yield product_service_1.ProductServices.updateProduct(productId);
+        // const { productId } = req.params;
+        // const result = await ProductServices.updateProduct(productId);
+        const result = yield product_service_1.ProductServices.updateProduct();
         res.status(200).json({
             success: true,
-            message: "Products are updated Successfully!",
+            message: "Product updated successfully!",
             data: result,
         });
     }
@@ -81,7 +82,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(200).json({
             success: true,
             message: "Product deleted Successfully!",
-            data: result,
+            data: result, //ekhane null chilo
         });
     }
     catch (err) {

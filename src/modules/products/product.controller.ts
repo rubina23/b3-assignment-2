@@ -47,7 +47,7 @@ const getProductById = async (req: Request, res: Response) => {
 };
 const updateProduct = async (req: Request, res: Response) => {
   try {
-    const { productId } = req.params;
+    // const { productId } = req.params;
     // const result = await ProductServices.updateProduct(productId);
     const result = await ProductServices.updateProduct();
     res.status(200).json({
@@ -70,7 +70,7 @@ const deleteProduct = async (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
       message: "Product deleted Successfully!",
-      data: null,
+      data: result, //ekhane null chilo
     });
   } catch (err) {
     res.status(500).json({

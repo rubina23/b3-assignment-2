@@ -1,4 +1,4 @@
-import { request } from "express";
+// import { request } from "express";
 import { TProduct } from "./product.interface";
 import { Product } from "./product.model";
 
