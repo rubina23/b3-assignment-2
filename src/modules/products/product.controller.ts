@@ -40,8 +40,8 @@ const getProductById = async (req: Request, res: Response) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Couldn't fetch products!",
-      error: err,
+      message: "Product not found",
+      // error: err,
     });
   }
 };

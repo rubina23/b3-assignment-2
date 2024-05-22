@@ -11,7 +11,13 @@ const getAllOrders = async () => {
   return result;
 };
 
+const getOrderById = async (id: string) => {
+  const result = await Order.findById(id);
+  return result;
+};
+
 export const OrderServices = {
   createOrder,
   getAllOrders,
+  getOrderById,
 };

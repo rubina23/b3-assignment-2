@@ -24,8 +24,26 @@ const getAllOrders = async (req: Request, res: Response) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Couldn't fetch products!",
+      message: "Order not found",
       error: err,
+    });
+  }
+};
+
+const getOrderById = async (req: Request, res: Response) => {
+  try {
+    const { orderId } = req.params;
+    const result = await OrderServices.getOrderById(orderId);
+    res.status(200).json({
+      success: true,
+      message: "Product fetched successfully!",
+      data: result,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Order not found",
+      // error: err,
     });
   }
 };
@@ -33,4 +51,5 @@ const getAllOrders = async (req: Request, res: Response) => {
 export const OrderControllers = {
   createOrder,
   getAllOrders,
+  getOrderById,
 };
