@@ -47,9 +47,27 @@ const getOrderById = async (req: Request, res: Response) => {
     });
   }
 };
+const orderSearchByEmail = async (req: Request, res: Response) => {
+  try {
+    const { orderSearchByEmail } = req.params;
+    const result = await OrderServices.getOrderById(orderSearchByEmail);
+    res.status(200).json({
+      success: true,
+      message: "Product fetched successfully!",
+      data: result,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Order not found",
+      // error: err,
+    });
+  }
+};
 
 export const OrderControllers = {
   createOrder,
   getAllOrders,
   getOrderById,
+  orderSearchByEmail,
 };

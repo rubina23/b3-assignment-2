@@ -82,7 +82,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(200).json({
             success: true,
             message: "Product deleted Successfully!",
-            data: result, //ekhane null chilo
+            data: result, //null
         });
     }
     catch (err) {

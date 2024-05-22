@@ -16,8 +16,14 @@ const getOrderById = async (id: string) => {
   return result;
 };
 
+const orderSearchByEmail = async (orderSearchByEmail: string) => {
+  const result = await Order.findById(orderSearchByEmail);
+  return result;
+};
+
 export const OrderServices = {
   createOrder,
   getAllOrders,
   getOrderById,
+  orderSearchByEmail,
 };
